@@ -10,20 +10,30 @@
 <body onresize="resize">
   <div id='menu'>
     <h4>Edit parameters <span id='menu_expand'onclick='toggle_menu()'>-</span></h4>
-    <input type='number' onchange='update_c()' id='real_input' value='-0.72'  min='-2' max='2' /><span>&reals;</span><br />
-    <input type='number' onchange='update_c()' id='imag_input' value='0.18'  min='-2' max='2' /><span>&ii;</span><br />
+    <input type='number' onchange='update_values()' id='real_input' step='0.05' value='-0.75' /><span>&reals;</span><br />
+    <input type='number' onchange='update_values()' id='imag_input' step='0.05' value='0.20' /><span>&ii;</span><br />
 
-    <input id='its_input' type='number' min='1' max='1024' value='128' /><span>Itterations</span>
+    <input id='its_input' onchange='update_values()' type='number' min='1' max='1024' value='128' /><span>Itterations</span>
     <br />
-    <h5>Formula</h5><input id='formula_input' type='text' value='z = z**2 + c' />
-    <button onclick='update_canvas()'>Render</button>
-    <a href="#" class="button" id="btn-download" download="download.png"><button >Download</button></a>
+    <h5>Formula</h5><input id='formula_input' type='text' value='Currently not supported' />
+    <button id="render_button" onclick='update_canvas()'>Render</button>
+    <a href="#" id="btn-download" download="download.png"><button id="download_button">Download</button></a>
+
+    <input type='checkbox' onclick='resolution_handler()' id='high_res_input' /><span class='button_text'>High Resolution</span>
+    <input type='number' placeholder='Resolution' id='enable_high_res' oninput='resolution_handler()' disabled/>
+    <span> x </span><span id='number_span'>x</span><br />
+    <span id='progress'>Progress: 0/0</span>
+      <!-- <input type='checkbox' onclick='zoom_handler()' id='zoom_bool_input' /><span class='button_text'>Zoom</span>
+      <input type='number' placeholder='Factor' id='zoom_factor' oninput='resolution_handler()' disabled/> -->
   </div>
+
+
   <canvas id='canvas' width='1000' height='1000'></canvas>
   <script src='imag.js'></script>
   <script src='js.js'></script>
   <script src='download.js'></script>
-  <script src='edit.js'></script>
+  <script src='menu.js'></script>
+  <script src='highres.js'></script>
 
 </body>
 

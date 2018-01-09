@@ -1,4 +1,4 @@
-html, body, canvas   {
+html, body, canvas {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -13,6 +13,36 @@ span, h4, h5 {
   font-family: monospace;
 }
 
+button:invalid {
+  box-shadow: none;
+}
+
+#render_button, #download_button, #btn-download {
+  width: 45%;
+  margin: 0px;
+}
+
+#render_button#enable_high_res {
+  margin-left: 5px;
+  float: left;
+}
+
+#download_button {
+  margin-right: 5px;
+  float: right;
+}
+#zoom_factor {
+  width: 50%;
+  float: right;
+  margin-right: 5px;
+}
+
+input[type="checkbox"] {
+  height 22px;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 5px;
+}
 #real_input, #imag_input, #its_input, #formula_input {
   font-family: monospace;
   margin: 0 5px;
@@ -20,17 +50,15 @@ span, h4, h5 {
   width: 7ch;
   max-width: 160px;
 }
+#enable_high_res {
+  width: 50%;
 
+}
 #formula_input {
   width: 100%;
 }
 
-#menu_expand {
-  user-select: none;
-}
-
 #menu {
-  user-select: none;
   position: fixed;
   top: 10px;
   left: 10px;
@@ -39,5 +67,14 @@ span, h4, h5 {
   background-color: white;
   border-radius: 10px;
   border: 1px solid gray;
-  transition: .2s;
+  transition: .4s;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
