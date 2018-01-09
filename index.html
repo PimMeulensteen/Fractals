@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css.css">
+  <title>Fractals</title>
+</head>
+
+<body onresize="resize">
+  <div id='menu'>
+    <h4>Edit parameters <span id='menu_expand'onclick='toggle_menu()'>-</span></h4>
+    <input type='number' onchange='update_c()' id='real_input' value='-0.72'  min='-2' max='2' /><span>&reals;</span><br />
+    <input type='number' onchange='update_c()' id='imag_input' value='0.18'  min='-2' max='2' /><span>&ii;</span><br />
+
+    <input id='its_input' type='number' min='1' max='1024' value='128' /><span>Itterations</span>
+    <br />
+    <h5>Formula</h5><input id='formula_input' type='text' value='z = z**2 + c' />
+    <button onclick='update_canvas()'>Render</button>
+
+
+
+
+  </div>
+  <canvas id='canvas' width='1000' height='1000'></canvas>
+  <script src='imag.js'></script>
+  <script src='js.js'></script>
+  <script src='edit.js'></script>
+
+</body>
+
+
+</html>
+
+</html>
+
+</html>

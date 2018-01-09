@@ -1,0 +1,43 @@
+html, body, canvas   {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h4, h5 {
+  padding: 0px;
+  margin: 5px;
+}
+
+span, h4, h5 {
+  font-family: monospace;
+}
+
+#real_input, #imag_input, #its_input, #formula_input {
+  font-family: monospace;
+  margin: 0 5px;
+  left: 20px;
+  width: 7ch;
+  max-width: 160px;
+}
+
+#formula_input {
+  width: 100%;
+}
+
+#menu_expand {
+  user-select: none;
+}
+
+#menu {
+  user-select: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 300px;
+  width: 175px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid gray;
+  transition: .2s;
+}
