@@ -26,26 +26,26 @@ async function update_canvas() {
     //Clears canvas
     ca.width = ca.width;
 
-    if(check){
-        value =  document.getElementById("enable_high_res").value;
+    if (check) {
+        value = document.getElementById("enable_high_res").value;
         ca.width = value;
         ca.height = value;
     } else {
         ca.width = window.innerWidth;
         ca.height = window.innerHeight;
     }
-        factor = Math.round(Math.min(canvas.width, canvas.height) / 4)
+    factor = Math.round(Math.min(canvas.width, canvas.height) / 4)
 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.translate(canvas.width / 2, canvas.height / 2);
 
-    for (var x = -.5 * canvas.width; x < .5 * canvas.width; x++) {
+    for (var x = -.5 * canvas.width; x < .5 * canvas.width+1; x++) {
         if (!running) {
             break
         }
-        progress.innerHTML = 'Progress: ' + (x + (.5 * canvas.width))+ '/' + canvas.width;
-        for (var y = -.5 * canvas.height; y < .5 * canvas.height; y++) {
+        progress.innerHTML = 'Progress: ' + (x + (.5 * canvas.width)) + '/' + canvas.width;
+        for (var y = -.5 * canvas.height; y < .5 * canvas.height+1; y++) {
             result = (algorithm(x / factor, y / factor) / its) * 240;
             ctx.fillStyle = 'hsl(' + result + ',100%,50%)';
             ctx.fillRect(x, y, 1, 1);
