@@ -1,6 +1,5 @@
-<<<<<<< HEAD
+
 ##Fractals
-This will be a site where you can generate and save fractals.
-=======
-# fractals
->>>>>>> refs/remotes/origin/dev
+Dit is een website waar je fractals kan genereren en maken. De gebruikte fractal is van een Julia Set.
+
+
