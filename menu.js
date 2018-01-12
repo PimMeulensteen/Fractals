@@ -13,7 +13,7 @@ async function toggle_menu() {
         expand_arrow_menu.innerHTML = '-'
         await sleep(200);
     } else {
-        menu.style.height = '25px';
+        menu.style.height = '35px';
         display_menu_items = 'none';
         expand_arrow_menu.innerHTML = '+';
     }
