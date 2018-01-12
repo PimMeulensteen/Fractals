@@ -13,11 +13,12 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 ctx.translate(canvas.width / 2, canvas.height / 2);
 var progress = document.getElementById('progress');
 running = false;
-async function update_canvas() {
 
+//Function to render the actual fractal
+async function update_canvas() {
     if (running) {
         running = false;
-        setTimeout(update_canvas, 40)
+        setTimeout(update_canvas, 1000)
         return false
     }
     running = true;
@@ -42,7 +43,7 @@ async function update_canvas() {
 
     for (var x = -.5 * canvas.width; x < .5 * canvas.width+1; x++) {
         if (!running) {
-            break
+            return false
         }
         progress.innerHTML = 'Progress: ' + (x + (.5 * canvas.width)) + '/' + canvas.width;
         for (var y = -.5 * canvas.height; y < .5 * canvas.height+1; y++) {
@@ -53,6 +54,7 @@ async function update_canvas() {
         await sleep(1);
     }
     ctx.stroke();
+    running = false;
 }
 
 
@@ -84,15 +86,15 @@ function abs(z) {
 }
 
 
-
-
 //Resize the window onchange
 function resize() {
     //resize the canvas
     c.width = window.innerWidth;
     c.height = window.innerHeight;
     //resize the circle
-    factor = Math.round(Math.min(window.innerWidth, window.innerHeight) / 4)
+    factor = Math.round(Math.min(window.innerWidth, window.innerHeight) / 4);
+    if(running){running = false;update_canvas()}else{running = false}
+
 }
 
 window.onresize = resize;
