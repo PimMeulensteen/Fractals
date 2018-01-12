@@ -4,7 +4,7 @@ var menu = document.getElementById('menu')
 var expand_arrow_menu = document.getElementById('menu_expand');
 menu_items = menu.children;
 var menu_items_length = menu_items.length
-
+document.getElementsByTagName("H4")[0].addEventListener("click",toggle_menu);
 async function toggle_menu() {
     display_menu = !display_menu;
     if (display_menu) {

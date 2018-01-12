@@ -25,6 +25,9 @@ h4, h5 {
   margin: 5px;
   font-size: 100%;
 }
+h4:hover {
+  cursor: pointer;
+}
 #copyright{
   text-align: center;
   color: lightgray;
