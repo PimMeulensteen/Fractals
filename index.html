@@ -20,10 +20,14 @@
     <button id="render_button" onclick='update_canvas()'>Render</button>
     <a href="#" id="btn-download" download="download.png"><button id="download_button">Download</button></a><br />
 
-    <input type='checkbox' onclick='resolution_handler()' id='high_res_input' /><span class='button_text'>High Resolution</span>
-    <input type='number' placeholder='Resolution' id='enable_high_res' oninput='resolution_handler()' disabled/>
-    <span> x </span><span id='number_span'>x</span>
-    <span id='progress'>Progress: 0/0</span>
+    <div id='resolution_div'>
+		<input type='checkbox' onclick='resolution_handler()' id='high_res_input' /><span class='button_text'>High Resolution</span><br>
+		<input type='number' placeholder='Resolution' id='enable_high_res' oninput='resolution_handler()' disabled/>
+		<span> x </span><span id='number_span'>x</span>
+	</div>
+	
+	<div id='progress'>Progress: 0/0</div>
+
     <!-- <input type='checkbox' onclick='zoom_handler()' id='zoom_bool_input' /><span class='button_text'>Zoom</span>
       <input type='number' placeholder='Factor' id='zoom_factor' oninput='resolution_handler()' disabled/> -->
     <br />
@@ -31,10 +35,7 @@
       Pim Meulensteen &copy; 2018
     </div>
   </div>
-  <div style="visibility:hidden">
-    <span id="char_to_check">&ii;</span>
-    <span id="not_renderable">i</span>
-  </div>
+
 
   <canvas id='canvas' width='1000' height='1000'></canvas>
   <script src='js.js'></script>
